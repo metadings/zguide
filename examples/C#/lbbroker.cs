@@ -195,6 +195,9 @@ namespace Examples
 								break;
 							}
 						}
+						
+						// dispose to avoid memory leaks
+						incoming.Dispose();
 					}
 					if (worker_queue.Count > 0)
 					{
@@ -226,6 +229,9 @@ namespace Examples
 
 							// Dequeue the next worker identity
 							worker_queue.RemoveAt(0);
+							
+							// dispose to avoid memory leaks
+							incoming.Dispose();
 						}
 					}
 				}
